@@ -1,0 +1,101 @@
+evaluating the medication regimen of a 59-year-old female stroke patient with a history of hypertension and duodenal ulcers, we can create a Python script that outlines and verifies the medications she has been advised, including the dosages and schedule.
+
+class Medication:
+    def __init__(self, name, dosage, frequency, duration=None):
+        self.name = name
+        self.dosage = dosage
+        self.frequency = frequency
+        self.duration = duration
+
+    def __str__(self):
+        if self.duration:
+            return f"{self.name}: {self.dosage}, {self.frequency} for {self.duration} days"
+        else:
+            return f"{self.name}: {self.dosage}, {self.frequency}"
+
+# Define the medications
+omeprazole = Medication("Omeprazole", "40mg IV", "every 6 hours", 3)
+ranitidine = Medication("Ranitidine", "150mg", "as prescribed")
+aspirin = Medication("Aspirin", "75mg", "daily")
+captopril = Medication("Captopril", "3.5mg", "daily")
+simvastatin = Medication("Simvastatin", "75mg", "daily")
+folic_acid = Medication("Folic Acid", "as prescribed", "daily")
+vitamin_complex = Medication("Vitamin Complex", "as prescribed", "daily")
+zinc = Medication("Zinc", "as prescribed", "daily")
+magnesium = Medication("Magnesium", "as prescribed", "daily")
+selenium = Medication("Selenium", "as prescribed", "daily")
+
+# List all medications
+medications = [omeprazole, ranitidine, aspirin, captopril, simvastatin, folic_acid, vitamin_complex, zinc, magnesium, selenium]
+
+# Print the medication regimen
+print("Medication Regimen:")
+for med in medications:
+    print(med)
+
+Explanation:
+
+    Class Definition: A Medication class is defined to encapsulate details about each medication, including name, dosage, frequency, and optional duration.
+    Medication Instances: Instances of the Medication class are created for each drug the patient is taking, with appropriate parameters.
+    List and Print: The medications are stored in a list, and the script iterates through this list to print the details of each medication.
+
+Matlab script
+
+
+% Define a structure array to store medication details
+medications = struct('name', {}, 'dosage', {}, 'frequency', {}, 'duration', {});
+
+% Add medications to the structure array
+medications(end+1) = struct('name', 'Omeprazole', 'dosage', '40mg IV', 'frequency', 'every 6 hours', 'duration', '3 days');
+medications(end+1) = struct('name', 'Ranitidine', 'dosage', '150mg', 'frequency', 'as prescribed', 'duration', '');
+medications(end+1) = struct('name', 'Aspirin', 'dosage', '75mg', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Captopril', 'dosage', '3.5mg', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Simvastatin', 'dosage', '75mg', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Folic Acid', 'dosage', 'as prescribed', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Vitamin Complex', 'dosage', 'as prescribed', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Zinc', 'dosage', 'as prescribed', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Magnesium', 'dosage', 'as prescribed', 'frequency', 'daily', 'duration', '');
+medications(end+1) = struct('name', 'Selenium', 'dosage', 'as prescribed', 'frequency', 'daily', 'duration', '');
+
+% Display the medication regimen
+disp('Medication Regimen:');
+for i = 1:length(medications)
+    if isempty(medications(i).duration)
+        fprintf('%s: %s, %s\n', medications(i).name, medications(i).dosage, medications(i).frequency);
+    else
+        fprintf('%s: %s, %s for %s\n', medications(i).name, medications(i).dosage, medications(i).frequency, medications(i).duration);
+    end
+end
+
+
+Keras script 
+import keras
+from keras.models import Sequential
+
+# Define a function to list medications
+def list_medications():
+    medications = [
+        {"name": "Omeprazole", "dosage": "40mg IV", "frequency": "every 6 hours", "duration": "3 days"},
+        {"name": "Ranitidine", "dosage": "150mg", "frequency": "as prescribed", "duration": ""},
+        {"name": "Aspirin", "dosage": "75mg", "frequency": "daily", "duration": ""},
+        {"name": "Captopril", "dosage": "3.5mg", "frequency": "daily", "duration": ""},
+        {"name": "Simvastatin", "dosage": "75mg", "frequency": "daily", "duration": ""},
+        {"name": "Folic Acid", "dosage": "as prescribed", "frequency": "daily", "duration": ""},
+        {"name": "Vitamin Complex", "dosage": "as prescribed", "frequency": "daily", "duration": ""},
+        {"name": "Zinc", "dosage": "as prescribed", "frequency": "daily", "duration": ""},
+        {"name": "Magnesium", "dosage": "as prescribed", "frequency": "daily", "duration": ""},
+        {"name": "Selenium", "dosage": "as prescribed", "frequency": "daily", "duration": ""}
+    ]
+
+    print("Medication Regimen:")
+    for med in medications:
+        if med["duration"]:
+            print(f"{med['name']}: {med['dosage']}, {med['frequency']} for {med['duration']}")
+        else:
+            print(f"{med['name']}: {med['dosage']}, {med['frequency']}")
+
+# Call the function
+list_medications()
+
+
+
